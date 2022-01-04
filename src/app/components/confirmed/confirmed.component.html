@@ -1,0 +1,13 @@
+<ion-text color="primary">
+  <h2 class="title">Comparación de casos testeados, confirmados, fallecidos</h2>
+</ion-text>
+
+<div style="display: block">
+  <canvas
+    baseChart
+    [data]="barChartData"
+    [options]="barChartOptions"
+    [type]="barChartType">
+  </canvas>
+</div>
+

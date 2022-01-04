@@ -1,0 +1,13 @@
+<ion-text color="primary">
+  <h1 class="title">Resumen de datos sobre el covid-19</h1>
+</ion-text>
+
+<div class="chart">
+  <canvas
+    baseChart
+    [data]="pieChartData"
+    [type]="pieChartType"
+    [options]="pieChartOptions"
+  >
+  </canvas>
+</div>

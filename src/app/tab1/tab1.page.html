@@ -1,6 +1,19 @@
 <app-toolbar></app-toolbar>
 
 
-<ion-content [fullscreen]="true">
-<ion-title>Resumen de datos sobre el covid-19</ion-title>
+<ion-content class="ion-padding" [fullscreen]="true">
+
+  <!-- Resumen: -->
+  <app-comparation></app-comparation>
+
+  <ion-item-divider></ion-item-divider>
+
+  <!-- Comparación de casos: -->
+  <app-confirmed></app-confirmed>
+
+  <ion-item-divider></ion-item-divider>
+
+  <!-- Line Time: -->
+  <app-time-line></app-time-line>
+
 </ion-content>

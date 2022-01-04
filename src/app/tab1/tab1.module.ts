@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
+import { NgChartsModule } from 'ng2-charts';
+
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { SharedModule } from '../components/shared.module';
 
@@ -16,6 +18,7 @@ import { SharedModule } from '../components/shared.module';
     ExploreContainerComponentModule,
     Tab1PageRoutingModule,
     SharedModule,
+    NgChartsModule,
   ],
   declarations: [
     Tab1Page,
