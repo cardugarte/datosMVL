@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 
 import { NgChartsModule } from 'ng2-charts';
+import {MatTableModule} from '@angular/material/table';
 
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
@@ -25,7 +26,8 @@ import { DailyDataComponent } from './daily-data/daily-data.component';
   imports: [
     CommonModule,
     IonicModule,
-    NgChartsModule
+    NgChartsModule,
+    MatTableModule,
 
   ],
   exports: [
