@@ -1,13 +1,82 @@
 <ion-text color="primary">
-  <h1 class="title">Resumen de datos sobre el covid-19</h1>
+  <h1 class="title">{{this.dataCovid.title}}</h1>
+  <!-- <p>{{this.dataCovid.result.fArray[0].fStr}}</p>
+  <p>{{this.dataCovid.result.fArray[7].fStr}}</p> -->
 </ion-text>
 
-<div class="chart">
-  <canvas
-    baseChart
-    [data]="pieChartData"
-    [type]="pieChartType"
-    [options]="pieChartOptions"
-  >
-  </canvas>
-</div>
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12" sizeMd="8" sizeLg="6">
+      <ion-text color="primary">
+        <h6>Resumen total:</h6>
+      </ion-text>
+    </ion-col>
+    <ion-col class="resumen__data" size="12" sizeMd="8" sizeLg="12">
+      <ion-chip mode="ios" color="primary">
+        <ion-label color="secondary">{{'Fallecidos: '}}<br>{{ this.numberDataDeath | number}}</ion-label>
+      </ion-chip>
+      <ion-chip mode="ios" color="primary">
+        <ion-label color="secondary">{{'Confirmados: '}}<br>{{ this.numberDataConfirmed | number}}</ion-label>
+      </ion-chip>
+      <ion-chip mode="ios" color="primary">
+        <ion-label color="secondary">{{'Sospechosos: '}}<br>{{ this.numberDataSuspicious | number}}</ion-label>
+      </ion-chip>
+      <ion-chip mode="ios" color="primary">
+        <ion-label color="secondary">{{'Descartados: '}}<br>{{ this.numberDataDiscarded | number}}</ion-label>
+      </ion-chip>
+      <ion-chip mode="ios" color="primary">
+        <ion-label color="secondary">{{'Recuperados: '}}<br>{{ this.numberDataRecovered | number}}</ion-label>
+      </ion-chip>
+      <ion-chip mode="ios" color="primary">
+        <ion-label color="secondary">{{'Duplicación: '}}<br>{{ this.numberDataDuplication | number}}</ion-label>
+      </ion-chip>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12" sizeMd="8" sizeLg="5">
+      <div class="chart">
+        <canvas
+          baseChart
+          [data]="{
+            labels: [
+              this.tagNameDeath,
+              this.tagNameConfirmed,
+              this.tagNameSuspicious,
+              this.tagNameDiscarded,
+              this.tagNameRecovered
+            ],
+        datasets: [
+          { data:
+            [
+              this.numberDataDeath,
+              this.numberDataConfirmed,
+              this.numberDataSuspicious,
+              this.numberDataDiscarded,
+              this.numberDataRecovered,
+            ],
+            backgroundColor:
+            [
+              '#97077D',
+              '#038C2A',
+              '#5F1F7B',
+              '#0096C2',
+              '#98CE17'
+            ]
+          }
+        ]
+          }"
+          [type]="pieChartType"
+          [options]="pieChartOptions"
+        >
+        </canvas>
+      </div>
+    </ion-col>
+    <ion-col size="12" sizeMd="8" sizeLg="5">
+      <ion-text color="medium">
+        <p>{{this.dataCovid.description}}</p>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+
+</ion-grid>
+

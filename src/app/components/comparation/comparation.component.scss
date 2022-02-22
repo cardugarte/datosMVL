@@ -1,4 +1,44 @@
 .title {
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
+}
+
+.resumen__data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ion-row {
+  justify-content: center;
+  flex-direction: column;
+  ion-col {
+    margin: 0 auto;
+  }
+}
+
+ion-text {
+  h6 {
+    text-align: center;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+ion-chip {
+  display: flex;
+  justify-content:space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 40%;
+  height: 45px;
+  pointer-events: none;
+  ion-label {
+    line-height: 18px;
+    text-align: center;
+    font-weight: 700;
+  }
 }
