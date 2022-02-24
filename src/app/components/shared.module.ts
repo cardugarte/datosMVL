@@ -1,3 +1,4 @@
+import { GenderComponent } from './gender/gender.component';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -22,6 +23,7 @@ import { DailyDataComponent } from './daily-data/daily-data.component';
     ComparationComponent,
     TimeLineComponent,
     DailyDataComponent,
+    GenderComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { DailyDataComponent } from './daily-data/daily-data.component';
     ComparationComponent,
     TimeLineComponent,
     DailyDataComponent,
+    GenderComponent,
   ]
 })
 export class SharedModule { }

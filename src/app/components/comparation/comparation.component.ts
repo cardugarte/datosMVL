@@ -9,6 +9,8 @@ import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { ResumeService } from 'src/app/services/resume.service';
 
+import * as moment from 'moment';
+
 
 
 @Component({
@@ -19,18 +21,20 @@ import { ResumeService } from 'src/app/services/resume.service';
 export class ComparationComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/no-inferrable-types
   //Variables de datos:
-    dataCovid: CovidDataResume;
-    tagNameDeath: string;
+    dataCovid: any;
+    tagDate: string = '';
+    dataDate: string = '';
+    tagNameDeath: string = '';
     numberDataDeath: number = 0;
-    tagNameConfirmed: string;
+    tagNameConfirmed: string = '';
     numberDataConfirmed: number = 0;
-    tagNameSuspicious: string;
+    tagNameSuspicious: string = '';
     numberDataSuspicious: number = 0;
-    tagNameDiscarded: string;
+    tagNameDiscarded: string = '';
     numberDataDiscarded: number = 0;
-    tagNameRecovered: string;
+    tagNameRecovered: string = '';
     numberDataRecovered: number = 0;
-    tagNameDuplication: string;
+    tagNameDuplication: string = '';
     numberDataDuplication: number = 0;
 
   constructor(
@@ -59,10 +63,16 @@ export class ComparationComponent implements OnInit {
       this.numberDataRecovered = parseInt(data.result.fArray[12].fStr);
       this.tagNameDuplication = data.result.fArray[6].fStr;
       this.numberDataDuplication = parseInt(data.result.fArray[13].fStr);
+      this.dataDate = data.result.fArray[7].fStr;
+      this.tagDate = data.result.fArray[0].fStr;
+
+      //Cambia el formato de la fecha:
+      const date = moment(this.dataDate).format('DD-MM-YYYY');
+      this.dataDate = date;
       console.log(data);
+
     });
   }
-
 
 // eslint-disable-next-line @typescript-eslint/member-ordering
 @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
@@ -76,7 +86,7 @@ pieChartOptions: ChartConfiguration['options'] = {
       position: 'bottom',
       align: 'start',
       labels: {
-        color: '#97077D',
+        color: '#231F20',
         font: {
           weight: '700'
         }
@@ -84,28 +94,7 @@ pieChartOptions: ChartConfiguration['options'] = {
     }
   }
 };
-// pieChartData: ChartData<'doughnut', number[], string | string[]> = {
-//   labels: [ 'Confirmados' , 'Recuperados' , 'Sospechosos', 'Descartados', 'Fallecidos' ],
-//   datasets: [
-//     { data:
-//       [
-//         100,
-//         this.numberData,
-//         100,
-//         230,
-//         50,
-//       ],
-//       backgroundColor:
-//       [
-//         '#97077D',
-//         '#038C2A',
-//         '#5F1F7B',
-//         '#0096C2',
-//         '#98CE17'
-//       ]
-//     }
-//   ]
-// };
+
 pieChartType: ChartType = 'doughnut';
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { ResumeService } from 'src/app/services/resume.service';
 
 
 
@@ -33,10 +34,21 @@ export class ConfirmedComponent implements OnInit {
 
 
 
-  constructor() {}
+  constructor(
+    private resumeService: ResumeService,
+  ) {}
 
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.getConfirmed();
+  }
+
+    // getConfirmed() {
+    //   this.resumeService.getDataConfirmed()
+    //   .subscribe(data => {
+    //     console.log(data);
+    //   });
+    // }
 
   public randomize(): void {
     // Only Change 3 values

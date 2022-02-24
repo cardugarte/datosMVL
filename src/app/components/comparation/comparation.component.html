@@ -1,14 +1,13 @@
-<ion-text color="primary">
-  <h1 class="title">{{this.dataCovid.title}}</h1>
-  <!-- <p>{{this.dataCovid.result.fArray[0].fStr}}</p>
-  <p>{{this.dataCovid.result.fArray[7].fStr}}</p> -->
+<ion-text color="dark">
+  <h1 class="title">Datos COVID-19 Vicente López</h1>
 </ion-text>
 
 <ion-grid fixed>
-  <ion-row>
+  <ion-row class="row__container">
     <ion-col size="12" sizeMd="8" sizeLg="6">
-      <ion-text color="primary">
+      <ion-text color="dark">
         <h6>Resumen total:</h6>
+        <span>{{this.tagDate}}: {{this.dataDate}}</span>
       </ion-text>
     </ion-col>
     <ion-col class="resumen__data" size="12" sizeMd="8" sizeLg="12">
@@ -32,7 +31,13 @@
       </ion-chip>
     </ion-col>
   </ion-row>
-  <ion-row>
+  <ion-item-divider></ion-item-divider>
+  <ion-row class="row__grafica">
+    <ion-col size="12" sizeMd="8" sizeLg="5">
+      <ion-text color="dark">
+        <h6>Gráfica de resumen total de datos COVID-19</h6>
+      </ion-text>
+    </ion-col>
     <ion-col size="12" sizeMd="8" sizeLg="5">
       <div class="chart">
         <canvas

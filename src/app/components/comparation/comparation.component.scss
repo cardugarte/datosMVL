@@ -1,6 +1,7 @@
 .title {
   font-size: 18px;
   text-align: center;
+  margin: 0;
 }
 
 .resumen__data {
@@ -8,7 +9,9 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 35px 0;
 }
+
 
 ion-row {
   justify-content: center;
@@ -18,8 +21,20 @@ ion-row {
   }
 }
 
+.row__container {
+  margin-bottom: 27px;
+}
+
+.row__grafica {
+  margin-top: 27px;
+}
+
 ion-text {
-  h6 {
+  h6{
+    text-align: center;
+  }
+  span {
+    display: block;
     text-align: center;
   }
   p {
