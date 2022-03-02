@@ -3,9 +3,12 @@ import { CovidDataResume } from './../../models/home.model';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { ResumeService } from 'src/app/services/resume.service';
+
+
+
 
 import * as moment from 'moment';
 
